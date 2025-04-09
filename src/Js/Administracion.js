@@ -9,7 +9,7 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Dashboard.css";
+import "../Estilizacion/Dashboard.css";
 
 const Dashboard = () => {
   return (
@@ -23,7 +23,7 @@ const Dashboard = () => {
           <div className="menu-group">
             <ul className="list-unstyled">
               <li
-                className="menu-item"
+                className="menu-item1" 
                 onClick={() => (window.location.href = "/conversaciones")}
               >
                 📩 Conversaciones
