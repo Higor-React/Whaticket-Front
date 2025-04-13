@@ -24,19 +24,19 @@ const Dashboard = () => {
             <ul className="list-unstyled">
               <li
                 className="menu-item"
-                onClick={() => (window.location.href = "/conversaciones")}
+                onClick={() => (window.location.href = "/dashboard")}
               >
                 📩 Conversaciones
               </li>
 
               <li className="menu-item">🔗 Conexiones</li>
-              <li className="menu-item">📞 Contactos</li>
+              <li className="menu-item" onClick={() => (window.location.href = "/contactos")}>   📞 Contactos</li>
             </ul>
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
               <li className="menu-item">⚙️ Administración</li>
-              <li className="menu-item">👥 Usuarios</li>
+              <li className="menu-item"onClick={() => (window.location.href = "/usuarios")}>👥 Usuarios</li>
               <li className="menu-item">🤖 Líneas & ChatBots</li>
             </ul>
           </div>

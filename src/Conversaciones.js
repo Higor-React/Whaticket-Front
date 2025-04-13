@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Importa Link
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaBell, FaUser } from "react-icons/fa";
 import "./Dashboard.css";
@@ -7,32 +8,46 @@ const Conversaciones = () => {
   return (
     <div className="conversacion-container d-flex vh-100">
       <aside className="sidebar p-4 bg-dark text-white">
-        <button
-          className="btn btn-outline-secondary mb-3"
-          onClick={() => (window.location.href = "/dashboard")}
-        >
+        <Link to="/dashboard" className="btn btn-outline-secondary mb-3">
           📌 Menú
-        </button>
+        </Link>
         <div className="menu-groups">
           <div className="menu-group">
             <ul className="list-unstyled">
-              <li className="menu-item">📩 Conversaciones</li>
-              <li className="menu-item">🔗 Conexiones</li>
-              <li className="menu-item">📞 Contactos</li>
+              <li className="menu-item">
+                <Link to="/conversaciones" className="menu-link">📩 Conversaciones</Link>
+              </li>
+              <li className="menu-item">
+                <span className="menu-link">🔗 Conexiones</span>
+              </li>
+              <li className="menu-item"> 📞 Contactos 
+              </li>
             </ul>
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
-              <li className="menu-item">⚙️ Administración</li>
-              <li className="menu-item">👥 Usuarios</li>
-              <li className="menu-item">🤖 Líneas & ChatBots</li>
+              <li className="menu-item">
+                <span className="menu-link">⚙️ Administración</span>
+              </li>
+              <li className="menu-item">
+                <span className="menu-link">👥 Usuarios</span>
+              </li>
+              <li className="menu-item">
+                <span className="menu-link">🤖 Líneas & ChatBots</span>
+              </li>
             </ul>
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
-              <li className="menu-item">📡 API</li>
-              <li className="menu-item">🔑 Tokens</li>
-              <li className="menu-item">📚 Documentación</li>
+              <li className="menu-item">
+                <span className="menu-link">📡 API</span>
+              </li>
+              <li className="menu-item">
+                <span className="menu-link">🔑 Tokens</span>
+              </li>
+              <li className="menu-item">
+                <span className="menu-link">📚 Documentación</span>
+              </li>
             </ul>
           </div>
         </div>
