@@ -9,7 +9,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === "higor13012005@gmail.com" || password === "123456") {
+    if (email === "1@gmail.com" || password === "1") {
       navigate("/dashboard");
     } else {
       SetError("Email o contraseña incorrectos");

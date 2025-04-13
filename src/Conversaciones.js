@@ -13,18 +13,34 @@ const Conversaciones = () => {
         >
           📌 Menú
         </button>
+        
         <div className="menu-groups">
           <div className="menu-group">
             <ul className="list-unstyled">
               <li className="menu-item">📩 Conversaciones</li>
-              <li className="menu-item">🔗 Conexiones</li>
-              <li className="menu-item">📞 Contactos</li>
+              <li
+                className="menu-item"
+                onClick={() => (window.location.href = "/Conexiones")}
+              >
+                🔗 Conexiones
+              </li>
+              <li
+                className="menu-item"
+                onClick={() => (window.location.href = "/Contactos")}
+              >
+                📞 Contactos
+              </li>
             </ul>
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
               <li className="menu-item">⚙️ Administración</li>
-              <li className="menu-item">👥 Usuarios</li>
+              <li
+                className="menu-item"
+                onClick={() => (window.location.href = "/Usuarios")}
+              >
+                👥 Usuarios
+              </li>
               <li className="menu-item">🤖 Líneas & ChatBots</li>
             </ul>
           </div>
