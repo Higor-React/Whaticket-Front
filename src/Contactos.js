@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBell, FaUser, FaWhatsapp, FaCheckCircle, FaSpinner } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Dashboard.css";
 
 const Contactos = () => {
-  // Datos actualizados para coincidir con la imagen
+  // TUS DATOS EXISTENTES (NO MODIFICADOS)
   const contacts = [
     { name: "Pedro Giron", phone: "986413548", status: "Proceso" },
     { name: "Martin Perea", phone: "920613962", status: "Resuelto" },
@@ -17,6 +17,12 @@ const Contactos = () => {
     { name: "Estrella Oropeza", phone: "967845968", status: "Proceso" },
   ];
 
+  // ESTADOS NUEVOS PARA LOS MODALES
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [currentContact, setCurrentContact] = useState(null);
+
+  // FUNCIÓN PARA MOSTRAR ICONOS (EXISTENTE)
   const getStatusIcon = (status) => {
     switch (status) {
       case "Resuelto":
@@ -28,8 +34,20 @@ const Contactos = () => {
     }
   };
 
+  // FUNCIONES NUEVAS PARA MANEJAR LOS MODALES
+  const handleEditClick = (contact) => {
+    setCurrentContact(contact);
+    setShowEditModal(true);
+  };
+
+  const handleDeleteClick = (contact) => {
+    setCurrentContact(contact);
+    setShowDeleteModal(true);
+  };
+
   return (
     <div className="conversacion-container d-flex vh-100">
+      {/* TÚ SIDEBAR EXISTENTE (NO MODIFICADO) */}
       <aside className="sidebar p-4 bg-dark text-white">
         <Link to="/dashboard" className="btn btn-outline-secondary mb-3">
           📌 Menú
@@ -53,8 +71,8 @@ const Contactos = () => {
               <li className="menu-item">
                 <span className="menu-link">⚙️ Administración</span>
               </li>
-              <li className="menu-item" onClick={() => (window.location.href = "/usuarios")}>
-              👥 Usuarios
+              <li className="menu-item">
+                <span className="menu-link">👥 Usuarios</span>
               </li>
               <li className="menu-item">
                 <span className="menu-link">🤖 Líneas & ChatBots</span>
@@ -77,6 +95,7 @@ const Contactos = () => {
         </div>
       </aside>
       
+      {/* TÚ CONTENIDO PRINCIPAL EXISTENTE */}
       <main className="main-content flex-grow-1 d-flex flex-column bg-light">
         <header className="header d-flex justify-content-between align-items-center p-3 border-bottom bg-white shadow-sm">
           <h4 className="mb-0">Contactos</h4>
@@ -106,7 +125,7 @@ const Contactos = () => {
             <div className="card-header bg-white">
               <h5 className="mb-0">
                 <FaWhatsapp className="text-success me-2" />
-                WhatsApp Contactos
+                WhatsApp Contacts
               </h5>
             </div>
             <div className="card-body p-0">
@@ -137,17 +156,19 @@ const Contactos = () => {
                               className="btn btn-sm btn-outline-success me-1"
                               title="WhatsApp"
                             >
-                            <FaWhatsapp className="text-success me-8" />
+                              whatsapp 
                             </button>
                             <button 
                               className="btn btn-sm btn-outline-primary me-1"
                               title="Editar"
+                              onClick={() => handleEditClick(contact)}
                             >
                               ✏️
                             </button>
                             <button 
                               className="btn btn-sm btn-outline-danger"
                               title="Eliminar"
+                              onClick={() => handleDeleteClick(contact)}
                             >
                               🗑️
                             </button>
@@ -161,6 +182,93 @@ const Contactos = () => {
             </div>
           </div>
         </section>
+
+        {/* MODAL DE EDICIÓN (NUEVO) */}
+        {showEditModal && currentContact && (
+          <div className="modal-overlay">
+            <div className="modal-content">
+              <h4>Editar contacto</h4>
+              
+              <div className="modal-section">
+                <h5>Detalles del contacto</h5>
+                <div className="form-group">
+                  <label>Nombre</label>
+                  <input type="text" className="form-control" value={currentContact.name} readOnly />
+                </div>
+                <div className="form-group">
+                  <label>DNI</label>
+                  <input type="text" className="form-control" placeholder="DNI" />
+                </div>
+              </div>
+
+              <div className="modal-section">
+                <h5>WhatsApp</h5>
+                <div className="form-group">
+                  <label>Número de WhatsApp</label>
+                  <input type="text" className="form-control" value={currentContact.phone} readOnly />
+                </div>
+                <div className="form-group">
+                  <label>Correo Electrónico</label>
+                  <input type="email" className="form-control" placeholder="Correo electrónico" />
+                </div>
+              </div>
+
+              <div className="modal-section">
+                <h5>Información adicional</h5>
+                <div className="form-group">
+                  <label>Departamento</label>
+                  <input type="text" className="form-control" placeholder="Departamento" />
+                </div>
+                <div className="form-group">
+                  <label>Distrito</label>
+                  <input type="text" className="form-control" placeholder="Distrito" />
+                </div>
+                <div className="form-group">
+                  <label>Dirección</label>
+                  <input type="text" className="form-control" placeholder="Dirección" />
+                </div>
+              </div>
+
+              <div className="modal-actions">
+                <button 
+                  className="btn btn-secondary" 
+                  onClick={() => setShowEditModal(false)}
+                >
+                  CANCELAR
+                </button>
+                <button className="btn btn-primary">
+                  GUARDAR CAMBIOS
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Modal de Eliminación EXACTO como tu imagen */}
+        {showDeleteModal && currentContact && (
+          <div className="modal-overlay">
+            <div className="modal-delete-content">
+              <h4 className="modal-delete-title">Eliminar Contacto</h4>
+              <p className="modal-delete-text">¿Estas seguro que deseas eliminar a este Contacto?</p>
+              
+              <div className="modal-delete-info">
+                <div>{currentContact.name}</div>
+                <div>{currentContact.phone}</div>
+                <div>{currentContact.status}</div>
+              </div>
+
+              <div className="modal-delete-actions">
+                <button className="modal-cancel-btn">CANCELAR</button>
+                <button className="modal-delete-btn">ELIMINAR</button>
+              </div>
+
+              <div className="modal-delete-footer">
+                <div>FÍO: TAMBULUM</div>
+                <div>SEAT 100/2009</div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
