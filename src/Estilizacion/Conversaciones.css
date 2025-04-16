@@ -1,0 +1,312 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Estilo de la barra lateral */
+.sidebar {
+  width: 260px;
+  background: #2c3e50;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar li:hover {
+  background: #34495e;
+  transform: scale(1.05);
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección del chat */
+.chat-section {
+  display: flex;
+  flex: 10;
+  padding: 10px 5px 10px 0;
+}
+
+/* Lista de chats */
+.chat-list {
+  width: 300px;
+  background: #ecf0f1;
+  padding: 2px;
+  border-right: 2px solid #ddd;
+}
+
+/* Ventana de chat */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera del chat */
+.chat-header {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f9fa;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Cuerpo del chat */
+.chat-body {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #e5ddd5;
+}
+
+.mensaje-usuario,
+.mensaje-sistema {
+  max-width: 60%;
+  padding: 0.6rem 1rem;
+  border-radius: 15px;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.mensaje-usuario {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.mensaje-sistema {
+  align-self: flex-start;
+  background-color: white;
+}
+
+/* Pie del chat */
+.chat-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.chat-footer input {
+  flex-grow: 1;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+}
+
+.chat-footer button {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Grupos de menú */
+.menu-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-group {
+  background: #34495e;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2c3e50;
+}
+
+.menu-group ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.menu-group li {
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu-group li:hover {
+  background: #1abc9c;
+  color: black;
+}
+
+.menu-title {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  border-radius: 8px;
+  color: black;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.menu-group + .menu-group {
+  margin-top: 12px;
+}
+
+.dashboard {
+  background: #f4f4f4;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.contenedor-tabla {
+  width: 100%;
+  padding: 0px;
+  box-sizing: border-box;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.tabla-tareas {
+  width: 110%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 0;
+}
+
+.tabla-tareas th,
+.tabla-tareas td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-tareas th {
+  background-color: #e0d2d2;
+  font-weight: bold;
+}
+
+.tabla-tareas tr:hover {
+  background-color: #a89f9f;
+}
+
+.fila-tarea {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-left: 10px solid green;
+  margin: 5px 0;
+}
+
+.fila-tarea:hover {
+  background-color: #f9f9f9;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.detalle-tarea {
+  flex-grow: 1;
+}
+
+.detalle-tarea h6 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.detalle-tarea p {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.red-social {
+  font-size: 20px;
+  color: green;
+  margin-right: 10px;
+}
+
+.hora-ojo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.contenedor-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.tab-button {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  color: gray;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-button.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}

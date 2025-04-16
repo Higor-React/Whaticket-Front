@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import "../Estilizacion/Conexiones.css";
 import { FaMessage } from "react-icons/fa6";
-import { FaTrash, FaEdit,FaDesktop, FaMobile} from "react-icons/fa";
+import { FaTrash, FaEdit, FaDesktop, FaMobile } from "react-icons/fa";
 
 const Conexiones = () => {
   return (
@@ -23,7 +23,7 @@ const Conexiones = () => {
             <ul className="list-unstyled">
               <li
                 className="menu-item"
-                onClick={() => (window.location.href = "/Dashboard")}
+                onClick={() => (window.location.href = "/conversaciones")}
               >
                 📩 Conversaciones
               </li>
@@ -39,7 +39,7 @@ const Conexiones = () => {
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
-              <li className="menu-item">⚙️ Administración</li>
+              <li>⚙️ Administración</li>
               <li className="menu-item">👥 Usuarios</li>
               <li className="menu-item">🤖 Líneas & ChatBots</li>
             </ul>
@@ -60,7 +60,7 @@ const Conexiones = () => {
             <button className="btn btn-outline-secondary me-2">
               <FaBell />
             </button>
-            
+
             <button className="btn btn-outline-secondary me-2">
               <FaMessage />
             </button>
@@ -70,141 +70,247 @@ const Conexiones = () => {
             </button>
           </div>
         </header>
-    <div className="container mt-4">
-        <h5 className="TConexiones"> 🗒️ Conexiones </h5>
-        <table className="table table-hover table-bordered mt-3 shadow-sm">
-        <thead className="table-dark">
-            <br>
-            </br>
-        <tr>
-            <th>Canal</th>
-            <th>Nombre</th>
-            <th>Télefono</th>
-            <th>Estado</th>
-            <th>Sesión</th>
-            <th>Ultima Actualizacion</th>
-            <th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody className="tablaConexiones">
-            <tr>
-                <td><FaWhatsapp/> </td>
-                <td>Whaticket PERU </td>
-                <td><FaDesktop className="Desktop me-2" style={{ cursor: "pointer"}}/>17879456548</td>
-                <td><span className="badge bg-success">Conectado</span></td>
+        <div className="container mt-4">
+          <h5 className="TConexiones"> 🗒️ Conexiones </h5>
+          <table className="table table-hover table-bordered mt-3 shadow-sm">
+            <thead className="table-dark">
+              <br></br>
+              <tr>
+                <th>Canal</th>
+                <th>Nombre</th>
+                <th>Télefono</th>
+                <th>Estado</th>
+                <th>Sesión</th>
+                <th>Ultima Actualizacion</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody className="tablaConexiones">
+              <tr>
                 <td>
-                    <button className="btn btn-sm btn-danger">Desconectar</button>
+                  <FaWhatsapp />{" "}
+                </td>
+                <td>Whaticket PERU </td>
+                <td>
+                  <FaDesktop
+                    className="Desktop me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  17879456548
+                </td>
+                <td>
+                  <span className="badge bg-success">Conectado</span>
+                </td>
+                <td>
+                  <button className="btn btn-sm btn-danger">Desconectar</button>
                 </td>
                 <td>08/04/2025 14:30</td>
                 <td>
-                <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} />
-                <FaTrash className="text-danger" style={{ cursor: "pointer" }} />
+                  <FaEdit
+                    className="text-warning me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaTrash
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  />
                 </td>
-                
-            </tr>
+              </tr>
 
-            {/* Se genera una 2da nueva columna  */}
-            <tr>
-                <td><FaWhatsapp/> </td>
-                <td>Whaticket LIMA </td>
-                <td><FaDesktop className="Desktop me-2" style={{ cursor: "pointer"}}/>179854568979</td>
-                <td><span className="badge bg-success">Conectado</span></td>
+              {/* Se genera una 2da nueva columna  */}
+              <tr>
                 <td>
-                    <button className="btn btn-sm btn-danger">Desconectar</button>
+                  <FaWhatsapp />{" "}
+                </td>
+                <td>Whaticket LIMA </td>
+                <td>
+                  <FaDesktop
+                    className="Desktop me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  179854568979
+                </td>
+                <td>
+                  <span className="badge bg-success">Conectado</span>
+                </td>
+                <td>
+                  <button className="btn btn-sm btn-danger">Desconectar</button>
                 </td>
                 <td>09/05/2025 15:30</td>
                 <td>
-                <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} />
-                <FaTrash className="text-danger" style={{ cursor: "pointer" }} />
+                  <FaEdit
+                    className="text-warning me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaTrash
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  />
                 </td>
-            </tr>
+              </tr>
 
-            {/* Se genera 3era tabla Instagram */}
-            <tr>
-                <td><FaFacebook/> </td>
+              {/* Se genera 3era tabla Instagram */}
+              <tr>
+                <td>
+                  <FaFacebook />{" "}
+                </td>
                 <td>Whaticket FB </td>
-                <td><FaMobile className="Desktop me-2" style={{ cursor: "pointer"}}/>1569878546</td>
-                <td><span className="badge bg-success">Conectado</span></td>
                 <td>
-                    <button className="btn btn-sm btn-danger">Desconectar</button>
+                  <FaMobile
+                    className="Desktop me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  1569878546
+                </td>
+                <td>
+                  <span className="badge bg-success">Conectado</span>
+                </td>
+                <td>
+                  <button className="btn btn-sm btn-danger">Desconectar</button>
                 </td>
                 <td>08/04/2025 14:30</td>
                 <td>
-                <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} />
-                <FaTrash className="text-danger" style={{ cursor: "pointer" }} />
+                  <FaEdit
+                    className="text-warning me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaTrash
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  />
                 </td>
-            </tr>
+              </tr>
 
-            {/* Se genera 3era tabla Instagram */}
-            <tr>
-                <td><FaFacebook/> </td>
+              {/* Se genera 3era tabla Instagram */}
+              <tr>
+                <td>
+                  <FaFacebook />{" "}
+                </td>
                 <td>Whaticket FB </td>
-                <td><FaMobile className="Desktop me-2" style={{ cursor: "pointer"}}/>1569878546</td>
-                <td><span className="badge bg-success">Conectado</span></td>
                 <td>
-                    <button className="btn btn-sm btn-danger">Desconectar</button>
+                  <FaMobile
+                    className="Desktop me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  1569878546
+                </td>
+                <td>
+                  <span className="badge bg-success">Conectado</span>
+                </td>
+                <td>
+                  <button className="btn btn-sm btn-danger">Desconectar</button>
                 </td>
                 <td>08/04/2025 14:30</td>
                 <td>
-                <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} />
-                <FaTrash className="text-danger" style={{ cursor: "pointer" }} />
+                  <FaEdit
+                    className="text-warning me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaTrash
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  />
                 </td>
-            </tr>
+              </tr>
 
-            {/* Se genera 3era tabla Instagram */}
-            <tr>
-                <td><FaInstagram/> </td>
-                <td>Whaticket IG  </td>
-                <td><FaMobile className="Desktop me-2" style={{ cursor: "pointer"}}/>1569878546</td>
-                <td><span className="badge bg-success">Conectado</span></td>
+              {/* Se genera 3era tabla Instagram */}
+              <tr>
                 <td>
-                    <button className="btn btn-sm btn-danger">Desconectar</button>
+                  <FaInstagram />{" "}
                 </td>
-                <td>08/04/2025 14:30</td>
-                <td>
-                <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} />
-                <FaTrash className="text-danger" style={{ cursor: "pointer" }} />
-                </td>
-            </tr>
-
-
-            {/* Se genera 3era tabla Instagram */}
-            <tr>
-                <td><FaInstagram/> </td>
                 <td>Whaticket IG </td>
-                <td><FaMobile className="Desktop me-2" style={{ cursor: "pointer"}}/>1569878546</td>
-                <td><span className="badge bg-success">Conectado</span></td>
                 <td>
-                    <button className="btn btn-sm btn-danger">Desconectar</button>
+                  <FaMobile
+                    className="Desktop me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  1569878546
+                </td>
+                <td>
+                  <span className="badge bg-success">Conectado</span>
+                </td>
+                <td>
+                  <button className="btn btn-sm btn-danger">Desconectar</button>
                 </td>
                 <td>08/04/2025 14:30</td>
                 <td>
-                <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} />
-                <FaTrash className="text-danger" style={{ cursor: "pointer" }} />
+                  <FaEdit
+                    className="text-warning me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaTrash
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  />
                 </td>
-            </tr>
+              </tr>
 
-
-            {/* Se genera 3era tabla Instagram */}
-            <tr>
-                <td><FaInstagram/> </td>
+              {/* Se genera 3era tabla Instagram */}
+              <tr>
+                <td>
+                  <FaInstagram />{" "}
+                </td>
                 <td>Whaticket IG </td>
-                <td><FaMobile className="Desktop me-2" style={{ cursor: "pointer"}}/>1569878546</td>
-                <td><span className="badge bg-success">Conectado</span></td>
                 <td>
-                    <button className="btn btn-sm btn-danger">Desconectar</button>
+                  <FaMobile
+                    className="Desktop me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  1569878546
+                </td>
+                <td>
+                  <span className="badge bg-success">Conectado</span>
+                </td>
+                <td>
+                  <button className="btn btn-sm btn-danger">Desconectar</button>
                 </td>
                 <td>08/04/2025 14:30</td>
                 <td>
-                <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} />
-                <FaTrash className="text-danger" style={{ cursor: "pointer" }} />
+                  <FaEdit
+                    className="text-warning me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaTrash
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  />
                 </td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
+              </tr>
 
-
+              {/* Se genera 3era tabla Instagram */}
+              <tr>
+                <td>
+                  <FaInstagram />{" "}
+                </td>
+                <td>Whaticket IG </td>
+                <td>
+                  <FaMobile
+                    className="Desktop me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  1569878546
+                </td>
+                <td>
+                  <span className="badge bg-success">Conectado</span>
+                </td>
+                <td>
+                  <button className="btn btn-sm btn-danger">Desconectar</button>
+                </td>
+                <td>08/04/2025 14:30</td>
+                <td>
+                  <FaEdit
+                    className="text-warning me-2"
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaTrash
+                    className="text-danger"
+                    style={{ cursor: "pointer" }}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </main>
     </div>
   );
