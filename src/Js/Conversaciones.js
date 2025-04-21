@@ -83,13 +83,14 @@ const Conversaciones = () => {
               >
                 🔗 Conexiones
               </li>
-              <li className="menu-item">📞 Contactos</li>
+              <li className="menu-item" onClick={() => (window.location.href = "/Contactos")}>📞 Contactos</li>
             </ul>
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
-              <li>⚙️ Administración</li>
-              <li className="menu-item">👥 Usuarios</li>
+            <li  className="menu-item">⚙️ Administración</li>
+              <li  className="menu-item"
+                onClick={() => (window.location.href = "/Usuarios")}>👥 Usuarios</li>
               <li className="menu-item">🤖 Líneas & ChatBots</li>
             </ul>
           </div>

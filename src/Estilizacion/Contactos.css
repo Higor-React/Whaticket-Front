@@ -2,7 +2,7 @@
 .dashboard-container {
     display: flex;
     height: 100vh;
-    background: #838a91;
+    background: #f8f9fa;
   }
   
   /* Estilo de la barra lateral */
@@ -135,28 +135,14 @@
     border-radius: 12px;
     padding: 20px;
   }
-  
-  .menu-item1{
+  .menu-group li:hover {
     background: #1abc9c;
+    color: black;
   }
 
-.tablaConexiones{
-    text-align: center;
-    font-size: 20px;
-}
-
-.table-dark{
-    text-align: center;
-}
-
-.menu-group1  {
-    font-size: 45px;
-    color: #1abc9c;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
+  
 .mb-0{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  font-size: 40px;
-}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+  }

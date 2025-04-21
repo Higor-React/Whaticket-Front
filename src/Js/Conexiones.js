@@ -27,20 +27,20 @@ const Conexiones = () => {
               >
                 📩 Conversaciones
               </li>
-
               <li
                 className="menu-item1"
                 onClick={() => (window.location.href = "/Conexiones")}
               >
                 🔗 Conexiones
               </li>
-              <li className="menu-item">📞 Contactos</li>
+              <li className="menu-item" onClick={() => (window.location.href = "/Contactos")}>📞 Contactos</li>
             </ul>
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
-              <li>⚙️ Administración</li>
-              <li className="menu-item">👥 Usuarios</li>
+            <li  className="menu-item">⚙️ Administración</li>
+              <li  className="menu-item"
+                onClick={() => (window.location.href = "/Usuarios")}>👥 Usuarios</li>
               <li className="menu-item">🤖 Líneas & ChatBots</li>
             </ul>
           </div>
@@ -55,7 +55,7 @@ const Conexiones = () => {
       </aside>
       <main className="main-content flex-grow-1 d-flex flex-column bg-light">
         <header className="header d-flex justify-content-between align-items-center p-3 border-bottom bg-white shadow-sm">
-          <h4 className="mb-0">Dashboard</h4>
+          <h4 className="mb-0">Conexiones</h4>
           <div>
             <button className="btn btn-outline-secondary me-2">
               <FaBell />
@@ -71,7 +71,7 @@ const Conexiones = () => {
           </div>
         </header>
         <div className="container mt-4">
-          <h5 className="TConexiones"> 🗒️ Conexiones </h5>
+   
           <table className="table table-hover table-bordered mt-3 shadow-sm">
             <thead className="table-dark">
               <br></br>
