@@ -7,14 +7,14 @@ import "./Dashboard.css";
 const Contactos = () => {
   // TUS DATOS EXISTENTES (NO MODIFICADOS)
   const contacts = [
-    { name: "Pedro Giron", phone: "986413548", status: "Proceso" },
-    { name: "Martin Perea", phone: "920613962", status: "Resuelto" },
-    { name: "Gilberto Vinhuez", phone: "930745786", status: "Proceso" },
-    { name: "Tomás Villarreal", phone: "956287103", status: "Resuelto" },
-    { name: "Flor Huamán", phone: "927105236", status: "Proceso" },
-    { name: "Luis Sanchez", phone: "973410654", status: "Resuelto" },
-    { name: "Isabelle Monteirico", phone: "921103745", status: "Resuelto" },
-    { name: "Estrella Oropeza", phone: "967845968", status: "Proceso" },
+    { name: "Pedro Giron",dni:"75488756",phone:"986413548",gmail:"Pedrogiron12@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle1",status: "Proceso" },
+    { name: "Martin Perea",dni:"69588754",phone:"920613962",gmail:"Martinperea54@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle2",status: "Resuelto" },
+    { name: "Gilberto Vinhuez",dni:"77544875",phone:"930745786",gmail:"Gilbertovinhuez@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle3",status: "Proceso" },
+    { name: "Tomás Villarreal",dni:"63225477",phone:"956287103",gmail:"Tomasvillarreal85@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle4",status: "Resuelto" },
+    { name: "Flor Huamán",dni:"77885522",phone:"927105236",gmail:"Florhuaman2@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle5",status: "Proceso" },
+    { name: "Luis Sanchez",dni:"15548789",phone:"973410654",gmail:"Luissanchez@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle6",status: "Resuelto" },
+    { name: "Isabelle Monteirico",dni:"77885544",phone:"921103745",gmail:"Isabellemonteirico@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle7",status: "Resuelto" },
+    { name: "Estrella Oropeza",dni:"11478554",phone:"967845968",gmail:"Estrellaoropeza78@gmail.com",departamento:"Lima",distrito:"Breña",direccion:"calle8",status: "Proceso" },
   ];
 
   // ESTADOS NUEVOS PARA LOS MODALES
@@ -47,35 +47,31 @@ const Contactos = () => {
 
   return (
     <div className="conversacion-container d-flex vh-100">
-      {/* TÚ SIDEBAR EXISTENTE (NO MODIFICADO) */}
       <aside className="sidebar p-4 bg-dark text-white">
-        <Link to="/dashboard" className="btn btn-outline-secondary mb-3">
-          📌 Menú
-        </Link>
+        <Link to="/dashboard" className="btn btn-outline-secondary mb-3">📌 Menú</Link>
+        <br />
+        <br />
+        <br />
         <div className="menu-groups">
           <div className="menu-group">
             <ul className="list-unstyled">
-              <li className="menu-item" onClick={() => (window.location.href = "/dashboard")}>
+              <li 
+                className="menu-item" 
+                onClick={() => (window.location.href = "/dashboard")}
+              >
                 📩 Conversaciones
               </li>
-              <li className="menu-item">
-                <span className="menu-link">🔗 Conexiones</span>
-              </li>
-              <li className="menu-item">
-                <Link to="/contactos" className="menu-link">📞 Contactos</Link>
-              </li>
+
+              <li className="menu-item"><span className="menu-link">🔗 Conexiones</span></li>
+              <li className="menu-item"><Link to="/contactos" className="menu-link">📞 Contactos</Link></li>
             </ul>
           </div>
           <div className="menu-group">
             <ul className="list-unstyled">
               <li className="menu-item">
-                <span className="menu-link">⚙️ Administración</span>
-              </li>
+                <span className="menu-link">⚙️ Administración</span></li>
               <li className="menu-item">
                 <span className="menu-link">👥 Usuarios</span>
-              </li>
-              <li className="menu-item">
-                <span className="menu-link">🤖 Líneas & ChatBots</span>
               </li>
             </ul>
           </div>
@@ -103,8 +99,10 @@ const Contactos = () => {
             <button className="btn btn-outline-secondary me-2">
               <FaBell />
             </button>
-            <button className="btn btn-outline-secondary">
-              <FaUser />
+            <button className="modal-delete-btn"
+              onClick={() => (window.location.href = "/")}>
+              <FaUser />{" "}
+              Cerrar Sesion
             </button>
           </div>
         </header>
@@ -134,7 +132,12 @@ const Contactos = () => {
                   <thead className="table-light">
                     <tr>
                       <th>Nombre</th>
+                      <th>DNI</th>
                       <th>WhatsApp</th>
+                      <th>Gmail</th>
+                      <th>Departamento</th>
+                      <th>Distrito</th>
+                      <th>Dirección</th>
                       <th>Estado</th>
                       <th>Acciones</th>
                     </tr>
@@ -143,7 +146,12 @@ const Contactos = () => {
                     {contacts.map((contact, index) => (
                       <tr key={index}>
                         <td>{contact.name}</td>
+                        <td>{contact.dni}</td>
                         <td>{contact.phone}</td>
+                        <td>{contact.gmail}</td>
+                        <td>{contact.departamento}</td>
+                        <td>{contact.distrito}</td>
+                        <td>{contact.direccion}</td>
                         <td>
                           <span className="d-flex align-items-center">
                             {getStatusIcon(contact.status)}
@@ -156,7 +164,7 @@ const Contactos = () => {
                               className="btn btn-sm btn-outline-success me-1"
                               title="WhatsApp"
                             >
-                              whatsapp 
+                              <FaWhatsapp className="text-success me-8" />
                             </button>
                             <button 
                               className="btn btn-sm btn-outline-primary me-1"
@@ -183,7 +191,7 @@ const Contactos = () => {
           </div>
         </section>
 
-        {/* MODAL DE EDICIÓN (NUEVO) */}
+                        
         {showEditModal && currentContact && (
           <div className="modal-overlay">
             <div className="modal-content">
@@ -197,7 +205,7 @@ const Contactos = () => {
                 </div>
                 <div className="form-group">
                   <label>DNI</label>
-                  <input type="text" className="form-control" placeholder="DNI" />
+                  <input type="text" className="form-control" value={currentContact.dni} placeholder="DNI" />
                 </div>
               </div>
 
@@ -209,7 +217,7 @@ const Contactos = () => {
                 </div>
                 <div className="form-group">
                   <label>Correo Electrónico</label>
-                  <input type="email" className="form-control" placeholder="Correo electrónico" />
+                  <input type="text" className="form-control" value={currentContact.gmail}    placeholder="Correo electrónico" />
                 </div>
               </div>
 
@@ -217,15 +225,15 @@ const Contactos = () => {
                 <h5>Información adicional</h5>
                 <div className="form-group">
                   <label>Departamento</label>
-                  <input type="text" className="form-control" placeholder="Departamento" />
+                  <input type="text" className="form-control" value={currentContact.departamento} placeholder="Departamento" />
                 </div>
                 <div className="form-group">
                   <label>Distrito</label>
-                  <input type="text" className="form-control" placeholder="Distrito" />
+                  <input type="text" className="form-control" value={currentContact.distrito} placeholder="Distrito" />
                 </div>
                 <div className="form-group">
                   <label>Dirección</label>
-                  <input type="text" className="form-control" placeholder="Dirección" />
+                  <input type="text" className="form-control" value={currentContact.direccion} placeholder="Dirección" />
                 </div>
               </div>
 
@@ -244,33 +252,20 @@ const Contactos = () => {
           </div>
         )}
 
-        {/* Modal de Eliminación EXACTO como tu imagen */}
         {showDeleteModal && currentContact && (
           <div className="modal-overlay">
-            <div className="modal-delete-content">
+            <div className="modal-content">
               <h4 className="modal-delete-title">Eliminar Contacto</h4>
               <p className="modal-delete-text">¿Estas seguro que deseas eliminar a este Contacto?</p>
-              
-              <div className="modal-delete-info">
-                <div>{currentContact.name}</div>
-                <div>{currentContact.phone}</div>
-                <div>{currentContact.status}</div>
-              </div>
-
               <div className="modal-delete-actions">
-                <button className="modal-cancel-btn">CANCELAR</button>
+                <button className="modal-cancel-btn"onClick={() => setShowDeleteModal(false)}>CANCELAR</button>
                 <button className="modal-delete-btn">ELIMINAR</button>
-              </div>
-
-              <div className="modal-delete-footer">
-                <div>FÍO: TAMBULUM</div>
-                <div>SEAT 100/2009</div>
               </div>
             </div>
           </div>
         )}
       </main>
-    </div>
+    </div>  
   );
 };
 
