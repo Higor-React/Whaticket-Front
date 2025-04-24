@@ -152,7 +152,7 @@
 
   .contacto {
     font-size: 24px;
-    color: #007bff; /* Azul */
+    color: #007bff;
     margin: 0;
   }
 
@@ -161,31 +161,68 @@
     gap: 10px;
   }
 
+
+  /*-------------------------BOTONES HEADER-------------------------*/
+/*BOTON BUSCAR*/
   .buscar {
-    background: none;
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    border-radius: 4px;
+    background-color: #fff;
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
     cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
   }
-
   .buscar:hover {
-    background-color: #878787;
+    background-color: #0d172a;
+    color: #fff;
   }
-
+  .buscar:active {
+    transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+  }
+  /*BOTON AGREGAR USUARIO*/
   .buscar2 {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    background-color: #fff;
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
     cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
   }
-
   .buscar2:hover {
-    background-color: darkblue;
+    background-color: #2986cc;
+    color: #fff;
   }
-
+  .buscar2:active {
+    transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+  }
 
   
 table {
@@ -245,7 +282,7 @@ td svg:hover {
   transition: transform 0.2s ease-in-out;
 }
 
-/* Optional: Responsive Design */
+ /*-------------------------DISEÑO RESPONSIVE-------------------------*/
 @media (max-width: 768px) {
   table, thead, tbody, th, td, tr {
     display: block;
@@ -281,7 +318,7 @@ td svg:hover {
 
 
 
-/* AGREGAR USUARIO */
+  /*-------------------------AGREGAR USUARIO-------------------------*/
 .custom-modal {
   position: fixed;
   top: 0;
@@ -304,36 +341,98 @@ td svg:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ELIMINAR USUARIO */
-
+  /*-------------------------ELIMINAR USUARIO-------------------------*/
+/*BOTON CANCELAR*/
 .btn0 {
-  padding: 10px 20px;
-  background-color: #cccccc ;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
   cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
-
 .btn0:hover {
-  background-color: #a3a3a3 ;
+  background-color: #0d172a;
+  color: #fff;
 }
 .btn0:active {
   transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }
-
+/*BOTON ELIMINAR USUARIO*/
 .btn1 {
-  padding: 10px 20px;
-  background-color: #e41616; 
-  color: white;
-  border: none;
-  border-radius: 5px;
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #b61111;
   cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .btn1:hover {
-  background-color: #b61111 ;
+  background-color: #b61111;
+  color: #fff;
 }
+
 .btn1:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+/*BOTON GUARDAR*/
+.btn3 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #2986cc;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn3:hover {
+  background-color: #2986cc;
+  color: #fff;
+}
+
+.btn3:active {
   transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }

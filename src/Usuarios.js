@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {FaSearch, FaBell, FaCommentAlt, FaUser, FaEdit, FaTrash } from 'react-icons/fa';
+import {FaSearch, FaBell, FaCommentAlt, FaUser, FaUserEdit, FaTrashAlt,} from 'react-icons/fa';
 import "./Usuarios.css";
 
 const Usuarios = () => {
@@ -8,7 +8,13 @@ const Usuarios = () => {
   const [Buscar, BuscarUsuario] = useState(false);
   const [Eliminar, EliminarUsuario] = useState(false);
   const [Editar, EditarUsuario] = useState(false);
+  const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
+  const usuarios = [
+    { id: 1, nombre: "🔴Pedro", correo: "Pedro@gmail.com", perfil: "Admin", area: "Venta" },
+    { id: 2, nombre: "🟢Gilberto", correo: "Gilberto@gmail.com", perfil: "Admin", area: "Venta" },
+  ];
   
+
   return (
     <div className="conversacion-container d-flex vh-100">
       <aside className="sidebar p-4 bg-dark text-white">
@@ -47,7 +53,6 @@ const Usuarios = () => {
             <ul className="list-unstyled">
               <li className="menu-item">⚙️ Administración</li>
               <li className="menu-item">👥 Usuarios</li>
-              <li className="menu-item">🤖 Líneas & ChatBots</li>
             </ul>
           </div>
           
@@ -90,7 +95,6 @@ const Usuarios = () => {
                   </div>
                 </div>
               </div>
-              
               <table class="table">
                 <thead class="thead-dark">
                   <tr>
@@ -102,36 +106,24 @@ const Usuarios = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>🔴Pedro</th>
-                    <td>Pedro@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Venta</td>
-                    <td>
-                      <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} onClick={() => EditarUsuario(true)} />
-                      <FaTrash className="text-danger" style={{ cursor: "pointer" }} onClick={() => EliminarUsuario(true)} />
-                    </td>
+                {usuarios.map((usuario) => (
+                  <tr key={usuario.id}>
+                  <th>{usuario.nombre}</th>
+                  <td>{usuario.correo}</td>
+                  <td>{usuario.perfil}</td>
+                  <td>{usuario.area}</td>
+                  <td>
+                <FaUserEdit size = '30'
+                  className="text-edit me-3"
+                  style={{color: "#0d172a", cursor: "pointer" }}
+                  onClick={() => {
+                  setUsuarioSeleccionado(usuario);
+                  EditarUsuario(true);
+                }}/>
+                <FaTrashAlt size = '30' className="text-danger" style={{ cursor: "pointer" }} onClick={() => EliminarUsuario(true)} />
+                  </td>
                   </tr>
-                  <tr>
-                    <th>🔴Pedro</th>
-                    <td>Pedro@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Venta</td>
-                    <td>
-                      <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} onClick={() => EditarUsuario(true)} />
-                      <FaTrash className="text-danger" style={{ cursor: "pointer" }} onClick={() => EliminarUsuario(true)} />
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>🟢Gilberto</th>
-                    <td>Gilberto@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Venta</td>
-                    <td>
-                      <FaEdit className="text-warning me-2" style={{ cursor: "pointer" }} onClick={() => EditarUsuario(true)} />
-                      <FaTrash className="text-danger" style={{ cursor: "pointer" }} onClick={() => EliminarUsuario(true)} />
-                    </td>
-                  </tr>
+                ))}
                 </tbody>
               </table>
             </div> 
@@ -170,12 +162,12 @@ const Usuarios = () => {
                 <div className="d-flex justify-content-end">
                   <button 
                     type="button" 
-                    className="btn btn-secondary me-2" 
+                    className="btn0" 
                     onClick={() => AgregarUsuario(false)}
                   >
                     Cancelar
                   </button>
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn3">
                     Guardar
                   </button>
                 </div>
@@ -191,23 +183,17 @@ const Usuarios = () => {
               <h4>Buscar Usuario</h4>
               <form>
                 <div className="mb-3">
-                  <label className="form-label">Buscar por:</label>
-                  <select className="form-select">
-                    <option>Nombre del usuario</option>
-                    <option>Correo Electronico</option>
-                    <option>Numero</option>
-                  </select>
                   <input type="text" className="form-control" placeholder="busqueda..." />
                 </div>
                 <div className="d-flex justify-content-end">
                   <button 
                     type="button" 
-                    className="btn btn-secondary me-2" 
+                    className="btn0" 
                     onClick={() => BuscarUsuario(false)}
                   >
                     Cancelar
                   </button>
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn3">
                     Buscar
                   </button>
                 </div>
@@ -234,7 +220,7 @@ const Usuarios = () => {
                     Cancelar
                   </button>
                   <button type="btn1" className="btn1">
-                    Aceptar
+                    Eliminar
                   </button>
                 </div>
               </form>
@@ -243,49 +229,67 @@ const Usuarios = () => {
         )}
 
         {/* EDITAR USUARIOS */}
-        {Editar && (
-          <div className="custom-modal">
-          <div className="modal-content">
-            <h4>Editar Usuario</h4>
-            <form>
-              <div className="mb-3">
-                <label className="form-label">Nombre</label>
-                <input type="text" className="form-control" placeholder="Nombre" />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Correo Electronico</label>
-                <input type="email" className="form-control" placeholder="123@gmail.com" />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Numero de Whatsapp</label>
-                <input type="text" className="form-control" placeholder="+51 987655123" />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Rol</label>
-                <select className="form-select">
-                  <option>Admin</option>
-                  <option>Usuario</option>
-                </select>
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Area</label>
-                <input type="text" className="form-control" placeholder="Ventas" />
-              </div>
-              <div className="d-flex justify-content-end">
-                <button 
-                  type="button" 
-                  className="btn btn-secondary me-2" 
-                  onClick={() => EditarUsuario(false)}
-                >
-                  Cancelar
-                </button>
-                <button type="submit" className="btn btn-primary">
-                  Guardar
-                </button>
-              </div>
-            </form>
-          </div>
+        {Editar && usuarioSeleccionado && (
+  <div className="custom-modal">
+    <div className="modal-content">
+      <h4>Editar Usuario</h4>
+      <form>
+        <div className="mb-3">
+          <label className="form-label">Nombre</label>
+          <input
+            type="text"
+            className="form-control"
+            value={usuarioSeleccionado.nombre}
+            onChange={(e) => setUsuarioSeleccionado({ ...usuarioSeleccionado, nombre: e.target.value })}
+          />
         </div>
+        <div className="mb-3">
+          <label className="form-label">Correo Electronico</label>
+          <input
+            type="email"
+            className="form-control"
+            value={usuarioSeleccionado.correo}
+            onChange={(e) => setUsuarioSeleccionado({ ...usuarioSeleccionado, correo: e.target.value })}
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Perfil</label>
+          <select
+            className="form-select"
+            value={usuarioSeleccionado.perfil}
+            onChange={(e) => setUsuarioSeleccionado({ ...usuarioSeleccionado, perfil: e.target.value })}
+          >
+            <option>Admin</option>
+            <option>Usuario</option>
+          </select>
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Area</label>
+          <input
+            type="text"
+            className="form-control"
+            value={usuarioSeleccionado.area}
+            onChange={(e) => setUsuarioSeleccionado({ ...usuarioSeleccionado, area: e.target.value })}
+          />
+        </div>
+        <div className="d-flex justify-content-end">
+          <button
+            type="button"
+            className="btn0"
+            onClick={() => {
+              EditarUsuario(false);
+              setUsuarioSeleccionado(null);
+            }}
+          >
+            Cancelar
+          </button>
+          <button type="submit" className="btn3">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
         )}
       </main>
     </div>

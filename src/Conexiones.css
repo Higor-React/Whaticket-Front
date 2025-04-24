@@ -1,42 +1,470 @@
+/* Contenedor principal del dashboard */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #f8f9fa;
+}
 
-/* CSS */
-.con {
-  appearance: button;
-  background-color: #3f3f3f;
-  border: 1px solid #3f3f3f;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
+/* Estilo de la barra lateral */
+.sidebar {
+  width: 260px;
+  background: #2c3e50;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 15px;
   cursor: pointer;
-  font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 14px;
-  line-height: 1.15;
-  overflow: visible;
-  padding: 12px 16px;
-  position: relative;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Efecto hover en los elementos del menú */
+.sidebar li:hover {
+  background: #34495e;
+  transform: scale(1.05);
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección del chat */
+.chat-section {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+}
+
+/* Lista de chats */
+.chat-list {
+  width: 280px;
+  background: #ecf0f1;
+  padding: 15px;
+  border-right: 2px solid #ddd;
+}
+
+/* Ventana de chat */
+.chat-window {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grupos de menú */
+.menu-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Cada cuadro de menú */
+.menu-group {
+  background: #34495e;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2c3e50;
+}
+
+/* Lista dentro de cada grupo */
+.menu-group ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.menu-group li {
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+/* Efecto hover en los ítems del menú */
+.menu-group li:hover {
+  background: #1abc9c;
+  color: black;
+}
+
+/* Título del menú */
+.menu-title {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  border-radius: 8px;
+  color: black;
   text-align: center;
-  text-transform: none;
-  transition: all 80ms ease-in-out;
+  margin-bottom: 15px;
+}
+
+/* Mejora en los grupos */
+.menu-group + .menu-group {
+  margin-top: 12px;
+}
+
+/* Diseño general del dashboard */
+.dashboard {
+  background: #f4f4f4;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.header {
+  background: rgb(0,212,255);
+  background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(14,184,218,1) 50%, rgba(17,95,172,1) 100%);
+  padding: 8px;
+  display: flex;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.contacto {
+  font-size: 24px;
+  color: #007bff;
+  margin: 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+
+/*-------------------------BOTONES HEADER-------------------------*/
+/*BOTON BUSCAR*/
+.buscar {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: fit-content;
+}
+.buscar:hover {
+  background-color: #0d172a;
+  color: #fff;
+}
+.buscar:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+/*BOTON AGREGAR USUARIO*/
+.buscar2 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.buscar2:hover {
+  background-color: #2986cc;
+  color: #fff;
+}
+.buscar2:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }
 
-.con:disabled {
-  opacity: .5;
+
+table {
+width: 100%;
+border-collapse: collapse;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin-top: 20px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+background-color: #fff;
+border-radius: 8px;
+overflow: hidden;
 }
 
-.con:focus {
-  outline: 0;
+thead.thead-dark {
+background-color: #343a40;
+color: #fff;
 }
 
-.con:hover {
-  background-color: #202020;
-  border-color: #202020;
+thead.thead-dark th {
+padding: 12px 15px;
+text-align: left;
+font-weight: 600;
+letter-spacing: 0.5px;
 }
 
-.con:active {
-  background-color: #202020;
-  border-color: #202020;
+tbody tr {
+border-bottom: 1px solid #ddd;
+transition: background-color 0.3s ease;
+line-height: 80px;
 }
+
+tbody tr:hover {
+background-color: #f1f1f1;
+}
+
+tbody th, 
+tbody td {
+padding: 12px 15px;
+vertical-align: middle;
+color: #333;
+}
+
+tbody th {
+font-weight: 600;
+}
+
+td .text-warning {
+color: #f0ad4e;
+}
+
+td .text-danger {
+color: #dc3545;
+}
+
+td svg:hover {
+transform: scale(1.2);
+transition: transform 0.2s ease-in-out;
+}
+
+/*-------------------------DISEÑO RESPONSIVE-------------------------*/
+@media (max-width: 768px) {
+table, thead, tbody, th, td, tr {
+  display: block;
+}
+
+thead.thead-dark {
+  display: none;
+}
+
+tbody tr {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+tbody td {
+  text-align: right;
+  position: relative;
+  padding-left: 50%;
+}
+
+tbody td::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+}
+
+
+
+
+/*-------------------------AGREGAR USUARIO-------------------------*/
+.custom-modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.6);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 999;
+}
+
+.modal-content {
+background: #fff;
+padding: 30px;
+border-radius: 10px;
+width: 500px;
+max-width: 90%;
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/*-------------------------ELIMINAR USUARIO-------------------------*/
+/*BOTON CANCELAR*/
+.btn0 {
+background-color: #fff;
+border: 0 solid #e2e8f0;
+border-radius: 1.5rem;
+box-sizing: border-box;
+color: #0d172a;
+cursor: pointer;
+display: inline-block;
+font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+font-size: 1.1rem;
+font-weight: 600;
+line-height: 1;
+padding: 1rem 1.6rem;
+text-align: center;
+text-decoration: none #0d172a solid;
+text-decoration-thickness: auto;
+transition: all .1s cubic-bezier(.4, 0, .2, 1);
+box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+.btn0:hover {
+background-color: #0d172a;
+color: #fff;
+}
+.btn0:active {
+transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+/*BOTON ELIMINAR USUARIO*/
+.btn1 {
+background-color: #fff;
+border: 0 solid #e2e8f0;
+border-radius: 1.5rem;
+box-sizing: border-box;
+color: #b61111;
+cursor: pointer;
+display: inline-block;
+font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+font-size: 1.1rem;
+font-weight: 600;
+line-height: 1;
+padding: 1rem 1.6rem;
+text-align: center;
+text-decoration: none #0d172a solid;
+text-decoration-thickness: auto;
+transition: all .1s cubic-bezier(.4, 0, .2, 1);
+box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+.btn1:hover {
+background-color: #b61111;
+color: #fff;
+}
+
+.btn1:active {
+transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+/*BOTON GUARDAR*/
+.btn3 {
+background-color: #fff;
+border: 0 solid #e2e8f0;
+border-radius: 1.5rem;
+box-sizing: border-box;
+color: #2986cc;
+cursor: pointer;
+display: inline-block;
+font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+font-size: 1.1rem;
+font-weight: 600;
+line-height: 1;
+padding: 1rem 1.6rem;
+text-align: center;
+text-decoration: none #0d172a solid;
+text-decoration-thickness: auto;
+transition: all .1s cubic-bezier(.4, 0, .2, 1);
+box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+.btn3:hover {
+background-color: #2986cc;
+color: #fff;
+}
+
+.btn3:active {
+transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+/*BOTON DESCONECTAR*/
+.btn4 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #444444 solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  }
+  
+  .btn4:hover {
+  background-color: #444444;
+  color: #fff;
+  }
+  
+  .btn4:active {
+  transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+  }

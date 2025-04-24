@@ -41,7 +41,6 @@ const Conversaciones = () => {
               >
                 👥 Usuarios
               </li>
-              <li className="menu-item">🤖 Líneas & ChatBots</li>
             </ul>
           </div>
           <div className="menu-group">
