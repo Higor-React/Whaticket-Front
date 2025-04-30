@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Js/Login";
-import Conversaciones from "./Js/Conversaciones";
+import Conversaciones from "./Js/Conversaciones/Conversaciones";
 import Conexiones from "./Js/Conexiones";
 import Contactos from "./Js/Contactos";
 import Usuarios from "./Js/Usuarios";
